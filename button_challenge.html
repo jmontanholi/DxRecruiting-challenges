@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <body>
+    <h2 style="color: blue;">JavaScript HTML DOM</h2>
 
-<h2>JavaScript HTML DOM</h2>
+    <div id="main">
+      <p>Finding HTML Elements by Tag Name</p>
+      <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
 
-<div id="main">
-<p>Finding HTML Elements by Tag Name</p>
-<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
-</div>
+    <button type="button">Button 1</button>
+    <button type="button">Button 2</button>
 
-<p id="demo"></p>
+    <p id="demo"></p>
 
-<script>
-const x = document.getElementById("main");
-const y = x.getElementsByTagName("p");
+    <script>
+      const buttons = document.getElementsByTagName("button");
+      const x = document.getElementById("main");
+      const y = x.getElementsByTagName("p");
+      const demo = document.getElementById("demo");
 
-document.getElementById("demo").innerHTML = 
-'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+      buttons[0].addEventListener('click', () => {
+        demo.innerHTML = y[0].innerHTML;
+      });
 
-</script>
-
-</body>
+      buttons[1].addEventListener('click', () => {
+        demo.innerHTML = y[1].innerHTML;
+      });
+    </script>
+  </body>
 </html>
 
 <!-- 
